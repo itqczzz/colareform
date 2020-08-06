@@ -1,5 +1,8 @@
 package com.alibaba.craftsman.controller;
 
+import com.alibaba.craftsman.api.MetricsServiceI;
+import com.alibaba.craftsman.api.ProvinceCityInfoServiceI;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController("/api/addressinfo")
 public class ProvinceCityInfoController {
+
+
+    @Autowired
+    private ProvinceCityInfoServiceI provinceCityInfoServiceI;
+
 
     @GetMapping("/allInfo")
     public @ResponseBody Object getAddressInfo(){
